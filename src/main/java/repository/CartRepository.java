@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CartRepository {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     public CartRepository(EntityManager entityManager) {
         this.entityManager = entityManager;

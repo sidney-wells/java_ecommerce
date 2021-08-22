@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
+@NamedQuery(name=Vendor.LIST_VENDORS, query="select v from Vendor v")
 public class Vendor {
 
     public Vendor() {
     }
+
+    public static final String LIST_VENDORS = "Vendor.listVendors";
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)

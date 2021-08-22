@@ -2,30 +2,34 @@ package entity;
 
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.Email;
 import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
+@NamedQuery(name = Customer.LIST_CUSTOMERS, query = "select c from Customer c")
 public class Customer {
+
+    public static final String LIST_CUSTOMERS = "Customer.listCustomers";
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "LAST_NAME")
+    private String lastName;
+
+    @Email(message = "Email must be in the form user@domain.com")
+    @Column(name = "EMAIL")
+    private String email;
+
+    @Column(name = "PASSWORD")
+    private String password;
 
     public Customer() {
     }
-
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
-
-    @Column(name="FIRST_NAME")
-    private String firstName;
-
-    @Column(name="LAST_NAME")
-    private String lastName;
-
-    @Column(name="EMAIL")
-    private String email;
-
-    @Column(name="PASSWORD")
-    private String password;
 
 //    @OneToMany(mappedBy = "customer")
 //    private Collection<Order> orders = new ArrayList<>();
