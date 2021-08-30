@@ -1,12 +1,13 @@
-package entity;
+package data.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import java.io.Serializable;
 
 @Entity
 @NamedQuery(name = Product.GET_PRODUCT_LIST, query = "select p from Product p")
 @NamedQuery(name = Product.FIND_PRODUCT_BY_ID, query = "select p from Product p where p.id = :id")
-public class Product {
+public class Product implements Serializable {
 
   public static final String GET_PRODUCT_LIST = "Product.findAll";
   public static final String FIND_PRODUCT_BY_ID = "Product.findById";
@@ -27,15 +28,23 @@ public class Product {
   private Long price;
 
   @ManyToOne
-  @JoinColumn(name = "VENDOR_ID")
   private Vendor vendor;
 
   @NotEmpty(message = "Product category must be set")
   @ManyToOne
-  @JoinColumn(name = "CATEGORY_ID")
   private Category category;
 
   public Product() {
+  }
+
+  public Product(Long id, String name, String description, Long price, Vendor vendor,
+      Category category) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.price = price;
+    this.vendor = vendor;
+    this.category = category;
   }
 
   public Long getId() {
