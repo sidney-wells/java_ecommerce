@@ -55,9 +55,9 @@
     <div id="header">
         <h1>Sidney's Java Ecommerce Web</h1>
     </div>
-    <h3>We're a family run business offering the most exclusive luxury goods at record low
-        prices!</h3>
-    <h3>All of our products have been verified by multiple third party services!</h3>
+    <p>We're a family run business offering the most exclusive luxury goods at record low
+        prices!</p>
+    <p>All of our products have been verified by multiple third party services!</p>
     <h3>See our Vendor partners <a href="ViewVendorsServlet">here!</a></h3>
     <h3>See our product Categories <a href="ViewVendorsServlet">here!</a></h3>
     <h1>Products</h1>

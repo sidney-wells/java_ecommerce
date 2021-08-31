@@ -58,9 +58,9 @@
         String firstName = (String) request.getAttribute("firstName");
     %>
     <h3>Welcome, <%= firstName.toUpperCase() %>
-        <h3>We're a family run business offering the most exclusive luxury goods at record low
-            prices!</h3>
-        <h3>All of our products have been verified by multiple third party services!</h3>
+        <p>We're a family run business offering the most exclusive luxury goods at record low
+            prices!</p>
+        <p>All of our products have been verified by multiple third party services!</p>
         <h3>See our product Categories <a href="ViewProductsByCategoriesServlet">here!</a></h3>
         <h3>See our Products <a href="ViewProductsServlet">here!</a></h3>
         <h1>Our Vendor Partners</h1>
