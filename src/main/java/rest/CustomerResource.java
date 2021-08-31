@@ -40,7 +40,6 @@ public class CustomerResource {
   @GET
   @Path("list")
   public List<Customer> getCustomers() throws SQLException {
-    System.out.println("customerService " + customerService);
     return customerService.getAllCustomers();
   }
 
